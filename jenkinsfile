@@ -1,0 +1,18 @@
+pipeline
+       {
+       agent any
+       stages
+            {
+            stage("git")
+                {
+                steps
+                    {
+                    git https://github.com/saikumar63032/jenkins.git
+                    }
+            stage("run")
+                {
+                steps
+                    {
+                    sh filename
+                    }
+                   }
