@@ -1,18 +1,23 @@
-pipeline
+Pipeline 
        {
        agent any
-       stages
-            {
-            stage("git")
-                {
-                steps
-                    {
-                    git https://github.com/saikumar63032/jenkins.git
-                    }
-            stage("run")
-                {
-                steps
-                    {
-                    sh filename
-                    }
-                   }
+         stages
+              {
+              stage("Git")
+                  {
+                  steps
+                      {
+                       git "https://github.com/saikumar63032/jenkins.git"
+                      }
+                  }
+              stage("run")
+                  {
+                  steps
+                      {
+                      sh "java demo.java"
+                      sh "python main.py"
+                      }   
+                  }
+             }
+        }
+
